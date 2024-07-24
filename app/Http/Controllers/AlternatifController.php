@@ -21,6 +21,11 @@ class AlternatifController extends Controller
         return view('alternatif.create');
     }
 
+    public function edit($id)
+    {
+        $alternatif = Alternatif::findOrFail($id);
+        return view('alternatif.edit', compact('alternatif'));
+    }
 
     public function store(Request $request)
     {
@@ -35,6 +40,22 @@ class AlternatifController extends Controller
         Alternatif::create($request->all());
 
         return redirect()->route('dashboard')->with('success', 'Data alternatif berhasil ditambahkan.');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'c1' => 'required|numeric|between:1,10',
+            'c2' => 'required|numeric|between:1,10',
+            'c3' => 'required|numeric|between:1,10',
+            'c4' => 'required|numeric|between:1,10',
+        ]);
+
+        $alternatif = Alternatif::findOrFail($id);
+        $alternatif->update($request->all());
+
+        return redirect()->route('dashboard')->with('success', 'Data alternatif berhasil diperbarui.');
     }
 
     public function delete($id)
@@ -111,9 +132,18 @@ class AlternatifController extends Controller
                 ]);
             }
 
-            Result::orderBy('id', 'desc')->get();
+            $results = Result::orderBy('nilai_utilitas', 'desc')->get();
+
+            $highestUtility = Result::orderBy('nilai_utilitas', 'desc')->first();
         }
 
-        return redirect()->route('result')->with(['success' => 'Utility calculation completed successfully.',  'intervalDiffs' => $intervalDiffs, 'maxScores' => $maxScores, 'minScores' => $minScores, 'criteriaWeights' => $criteriaWeights]);
+        return view('result', [
+            'intervalDiffs' => $intervalDiffs,
+            'maxScores' => $maxScores,
+            'minScores' => $minScores,
+            'criteriaWeights' => $criteriaWeights,
+            'highestUtility' => $highestUtility,
+            'results' => $results,
+        ]);
     }
 }

@@ -37,7 +37,7 @@
                             <td class="px-6 py-4">{{ $alternatif->c3 }}</td>
                             <td class="px-6 py-4">{{ $alternatif->c4 }}</td>
                             <td class="px-6 py-4">
-                                <!-- <a href="{{ route('alternatif.update', $alternatif->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a> -->
+                                <a href="{{ route('alternatif.edit', $alternatif->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
                                 <a href="{{ route('alternatif.delete', $alternatif->id) }}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                             </td>
                         </tr>

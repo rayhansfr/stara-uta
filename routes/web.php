@@ -13,7 +13,8 @@ Route::get('/', function () {
 Route::get('/alternatif/add', [AlternatifController::class, 'create'])->middleware(['auth', 'verified'])->name('alternatif.create');
 Route::post('/alternatif/save', [AlternatifController::class, 'store'])->middleware(['auth', 'verified'])->name('alternatif.store');
 Route::post('/alternatif/update/{id}', [AlternatifController::class, 'update'])->name('alternatif.update');
-Route::get('/alternatif/delete/{id}', [AlternatifController::class, 'delete'])->name('alternatif.delete');
+Route::get('/alternatif/edit/{id}', [AlternatifController::class, 'edit'])->middleware(['auth', 'verified'])->name('alternatif.edit');
+Route::get('/alternatif/delete/{id}', [AlternatifController::class, 'delete'])->middleware(['auth', 'verified'])->name('alternatif.delete');
 
 Route::get('/dashboard', [AlternatifController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 

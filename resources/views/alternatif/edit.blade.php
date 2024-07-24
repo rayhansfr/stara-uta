@@ -9,15 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("Tambah Data Alternatif") }}
+                    {{ __("Edit Data Alternatif") }}
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="px-6 text-gray-900 dark:text-gray-100">
-                        <form method="POST" action="{{ route('alternatif.store') }}">
+                        <form method="POST" action="{{ route('alternatif.update', $alternatif->id) }}">
                             @csrf
                             <div class="mb-4">
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="nama">Nama</label>
-                                <input type="text" name="nama" id="nama" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <input value="{{ old('nama', $alternatif->nama) }}" type="text" name="nama" id="nama" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                 @error('nama')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -26,14 +26,14 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="mb-4">
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c1">Personalitas</label>
-                                    <input type="number" name="c1" id="c1" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
+                                    <input value="{{ old('nama', $alternatif->c1) }}" type="number" name="c1" id="c1" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c1')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c2">Ketepatan Jawaban</label>
-                                    <input type="number" name="c2" id="c2" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
+                                    <input value="{{ old('nama', $alternatif->c2) }}" type="number" name="c2" id="c2" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c2')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
@@ -42,14 +42,14 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="mb-4">
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c3">Kelancaran Jawaban</label>
-                                    <input type="number" name="c3" id="c3" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
+                                    <input value="{{ old('nama', $alternatif->c3) }}" type="number" name="c3" id="c3" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c3')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c4">Pengetahuan</label>
-                                    <input type="number" name="c4" id="c4" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
+                                    <input value="{{ old('nama', $alternatif->c4) }}" type="number" name="c4" id="c4" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c4')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
