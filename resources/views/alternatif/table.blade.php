@@ -1,4 +1,4 @@
-<div class="py-12">
+<div class="py-6">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="grid grid-cols-2 align-items-center">
@@ -17,10 +17,11 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">Nama</th>
-                            <th scope="col" class="px-6 py-3">Personalitas</th>
-                            <th scope="col" class="px-6 py-3">Ketepatan Jawaban</th>
-                            <th scope="col" class="px-6 py-3">Kelancaran Jawaban</th>
-                            <th scope="col" class="px-6 py-3">Pengetahuan</th>
+                            <th scope="col" class="px-6 py-3">C1</th>
+                            <th scope="col" class="px-6 py-3">C2</th>
+                            <th scope="col" class="px-6 py-3">C3</th>
+                            <th scope="col" class="px-6 py-3">C4</th>
+                            <th scope="col" class="px-6 py-3">C5</th>
                             <th scope="col" class="px-6 py-3">
                                 Action
                             </th>
@@ -36,6 +37,7 @@
                             <td class="px-6 py-4">{{ $alternatif->c2 }}</td>
                             <td class="px-6 py-4">{{ $alternatif->c3 }}</td>
                             <td class="px-6 py-4">{{ $alternatif->c4 }}</td>
+                            <td class="px-6 py-4">{{ $alternatif->c5 }}</td>
                             <td class="px-6 py-4">
                                 <a href="{{ route('alternatif.edit', $alternatif->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
                                 <a href="{{ route('alternatif.delete', $alternatif->id) }}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
@@ -45,11 +47,11 @@
                     </tbody>
                 </table>
             </div>
-            <div class="p-12">
+            <div class="p-6">
                 <form action="{{ route('alternatif.calculate') }}" method="POST">
                     @csrf
                     <button type="submit" class="inline-flex justify-self-center items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-200 active:bg-indigo-600 disabled:opacity-25 transition">
-                        Calculate Utility
+                        Hitung nilai Utilitas
                     </button>
                 </form>
             </div>

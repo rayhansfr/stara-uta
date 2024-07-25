@@ -35,6 +35,7 @@ class AlternatifController extends Controller
             'c2' => 'required|numeric|between:1,10',
             'c3' => 'required|numeric|between:1,10',
             'c4' => 'required|numeric|between:1,10',
+            'c5' => 'required|numeric|between:1,10',
         ]);
 
         Alternatif::create($request->all());
@@ -50,6 +51,7 @@ class AlternatifController extends Controller
             'c2' => 'required|numeric|between:1,10',
             'c3' => 'required|numeric|between:1,10',
             'c4' => 'required|numeric|between:1,10',
+            'c5' => 'required|numeric|between:1,10',
         ]);
 
         $alternatif = Alternatif::findOrFail($id);
@@ -78,10 +80,11 @@ class AlternatifController extends Controller
 
         $alternatives = Alternatif::all();
         $criteriaWeights = [
-            'c1' => 0.25,
+            'c1' => 0.3,
             'c2' => 0.25,
-            'c3' => 0.25,
-            'c4' => 0.25,
+            'c3' => 0.2,
+            'c4' => 0.15,
+            'c5' => 0.1,
         ];
 
         $maxScores = [];
@@ -92,7 +95,7 @@ class AlternatifController extends Controller
 
 
         if (!$alternatives->isEmpty()) {
-            foreach (['c1', 'c2', 'c3', 'c4'] as $criterion) {
+            foreach (['c1', 'c2', 'c3', 'c4', 'c5'] as $criterion) {
                 $scores = $alternatives->pluck($criterion)->toArray();
                 $maxScores[$criterion] = (float) max($scores);
                 $minScores[$criterion] = (float) min($scores);
@@ -113,7 +116,7 @@ class AlternatifController extends Controller
             foreach ($alternatives as $alternative) {
                 $utility = 0;
 
-                foreach (['c1', 'c2', 'c3', 'c4'] as $criterion) {
+                foreach (['c1', 'c2', 'c3', 'c4', 'c5'] as $criterion) {
                     $score = $alternative->$criterion;
                     $normalizedScore = $score / $maxScores[$criterion];
                     $normalizedScores[$criterion] = $normalizedScore;
@@ -127,6 +130,7 @@ class AlternatifController extends Controller
                     'c2' => $normalizedScores['c2'],
                     'c3' => $normalizedScores['c3'],
                     'c4' => $normalizedScores['c4'],
+                    'c5' => $normalizedScores['c5'],
                     'status' => $alternative->status,
                     'nilai_utilitas' => $utility,
                 ]);

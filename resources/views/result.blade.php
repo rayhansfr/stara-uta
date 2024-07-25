@@ -12,8 +12,8 @@
                 </div>
 
                 @if (!empty($highestUtility))
-                <div class="alert alert-info p-6 text-gray-900 dark:text-gray-100">
-                    <strong>{{ $highestUtility->nama }}</strong> dengan nilai utilitas sebesar <strong>{{ $highestUtility->nilai_utilitas }}</strong>
+                <div class="alert alert-info px-6 pb-6 text-gray-900 dark:text-gray-100">
+                    <strong class="text-xl">{{ $highestUtility->nama }}</strong> dengan nilai utilitas sebesar <strong class="text-xl">{{ $highestUtility->nilai_utilitas }}</strong>
                 </div>
                 @endif
             </div>
@@ -33,6 +33,7 @@
                         <li>C2: {{ session('intervalDiffs')['c2'] }}</li>
                         <li>C3: {{ session('intervalDiffs')['c3'] }}</li>
                         <li>C4: {{ session('intervalDiffs')['c4'] }}</li>
+                        <li>C4: {{ session('intervalDiffs')['c5'] }}</li>
                     </ul>
                 </div>
             </div>
@@ -46,6 +47,7 @@
                         <li>C2: {{ session('maxScores')['c2'] }}</li>
                         <li>C3: {{ session('maxScores')['c3'] }}</li>
                         <li>C4: {{ session('maxScores')['c4'] }}</li>
+                        <li>C4: {{ session('maxScores')['c5'] }}</li>
                     </ul>
                 </div>
             </div>
@@ -59,6 +61,7 @@
                         <li>C2: {{ session('minScores')['c2'] }}</li>
                         <li>C3: {{ session('minScores')['c3'] }}</li>
                         <li>C4: {{ session('minScores')['c4'] }}</li>
+                        <li>C4: {{ session('minScores')['c5'] }}</li>
                     </ul>
                 </div>
             </div>
@@ -82,11 +85,11 @@
                             <tr>
                                 <th scope="col" class="px-6 py-3">Rank</th>
                                 <th scope="col" class="px-6 py-3">Nama</th>
-                                <th scope="col" class="px-6 py-3">Personalitas</th>
-                                <th scope="col" class="px-6 py-3">Ketepatan Jawaban</th>
-                                <th scope="col" class="px-6 py-3">Kelancaran Jawaban</th>
-                                <th scope="col" class="px-6 py-3">Pengetahuan</th>
-                                <th scope="col" class="px-6 py-3">Status</th>
+                                <th scope="col" class="px-6 py-3">C1</th>
+                                <th scope="col" class="px-6 py-3">C2</th>
+                                <th scope="col" class="px-6 py-3">C3</th>
+                                <th scope="col" class="px-6 py-3">C4</th>
+                                <th scope="col" class="px-6 py-3">C5</th>
                                 <th scope="col" class="px-6 py-3">Nilai Utilitas</th>
                             </tr>
                         </thead>
@@ -104,7 +107,7 @@
                                 <td class="px-6 py-4">{{ $result->c2 }}</td>
                                 <td class="px-6 py-4">{{ $result->c3 }}</td>
                                 <td class="px-6 py-4">{{ $result->c4 }}</td>
-                                <td class="px-6 py-4">{{ $result->status ? 'True' : 'False' }}</td>
+                                <td class="px-6 py-4">{{ $result->c5 }}</td>
                                 <td class="px-6 py-4">{{ $result->nilai_utilitas }}</td>
                             </tr>
                             @endforeach

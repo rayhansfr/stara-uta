@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('c2', 5, 3);
             $table->decimal('c3', 5, 3);
             $table->decimal('c4', 5, 3);
-            $table->boolean('status')->default(false);
+            $table->decimal('c5', 5, 3);
             $table->timestamps();
         });
     }

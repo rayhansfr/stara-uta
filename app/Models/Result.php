@@ -10,6 +10,12 @@ class Result extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 'c1', 'c2', 'c3', 'c4', 'status', 'nilai_utilitas',
+        'nama',
+        'c1',
+        'c2',
+        'c3',
+        'c4',
+        'c5',
+        'nilai_utilitas',
     ];
 }
