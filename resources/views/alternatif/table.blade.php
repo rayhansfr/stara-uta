@@ -1,12 +1,12 @@
-<div class="py-6">
+<div class="pb-6">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="grid grid-cols-2 align-items-center">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("Tabel Alternatif") }}
+                    {{ __("Alternatif") }}
                 </div>
                 <div class="p-6 text-gray-900 dark:text-gray-100 justify-self-end ">
-                    <a href="{{ route('alternatif.create') }}" class="font-semibold bg-blue-600 p-2 text-gray-800 dark:text-gray-200 rounded-md hover:bg-blue-800 cursor-pointer">
+                    <a href="{{ route('alternatif.create') }}" class="uppercase tracking-widest bg-blue-600 p-2 text-gray-800 dark:text-gray-200 rounded-md hover:bg-blue-800 cursor-pointer">
                         Tambah Alternatif
                     </a>
                 </div>

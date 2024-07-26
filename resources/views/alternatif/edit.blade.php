@@ -25,14 +25,14 @@
                             @csrf
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="mb-4">
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c1">Personalitas</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c1">Kerjasama Tim</label>
                                     <input value="{{ old('nama', $alternatif->c1) }}" type="number" name="c1" id="c1" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c1')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-4">
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c2">Ketepatan Jawaban</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c2">Kepedulian Terhadap Sesama</label>
                                     <input value="{{ old('nama', $alternatif->c2) }}" type="number" name="c2" id="c2" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c2')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -41,23 +41,30 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="mb-4">
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c3">Kelancaran Jawaban</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c3">Keingintahuan untuk berkembang</label>
                                     <input value="{{ old('nama', $alternatif->c3) }}" type="number" name="c3" id="c3" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c3')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-4">
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c4">Pengetahuan</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c4">Partisipasi dalam Kegiatan</label>
                                     <input value="{{ old('nama', $alternatif->c4) }}" type="number" name="c4" id="c4" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c4')
+                                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c5">Keaktifan dan Proaktif</label>
+                                    <input value="{{ old('nama', $alternatif->c5) }}" type="number" name="c5" id="c5" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
+                                    @error('c5')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div>
                                 <div class=" text-red-300 mb-6">
-                                    Masukkan Nilai dengan skala 1-10
+                                    Masukkan Nilai dengan skala likert 1-10
                                 </div>
                             </div>
                             <div class="justify-content-end mb-4">

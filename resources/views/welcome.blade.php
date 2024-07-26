@@ -35,6 +35,7 @@
             <div class="flex justify-center">
                 <div class="text-white text-center">
                     <p class="font-weight-bold text-[8rem]">STARA</p>
+                    <p class="font-weight-bold text-[2rem] p-6 mb-2 bg-slate-500 bg-opacity-40 rounded-lg">Best Staff Decision Support System</p>
                     <p>#STARAuntukMenyetarakan</p>
                     <p>#KamuSetaraKamuBerharga</p>
                 </div>

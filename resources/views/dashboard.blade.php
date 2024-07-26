@@ -5,25 +5,55 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="grid grid-cols-2 align-items-center">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        {{ __("Kriteria Alternatif") }}
+                        {{ __("Kriteria") }}
                     </div>
                 </div>
                 <div class="relative overflow-x-auto">
-                    <div class="px-6 pb-6 text-gray-900 dark:text-gray-100">
-                        <ul>
-                            <li>C1: Kerjasama Tim</li>
-                            <li>C2: Kepedulian Terhadap Sesama</li>
-                            <li>C3: Keingintahuan untuk Berkembang</li>
-                            <li>C4: Partisipasi dalam Kegiatan</li>
-                            <li>C4: Keaktifan dan Proaktif</li>
-                        </ul>
-                    </div>
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Kriteria</th>
+                                <th scope="col" class="px-6 py-3">Keterangan</th>
+                                <th scope="col" class="px-6 py-3">Bobot</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="px-6 py-4">C1</td>
+                                <td class="px-6 py-4">Kerjasama Tim</td>
+                                <td class="px-6 py-4">0.3</td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
+                                <td class="px-6 py-4">C2</td>
+                                <td class="px-6 py-4">Kepedulian Terhadap Sesama</td>
+                                <td class="px-6 py-4">0.25</td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                <td class="px-6 py-4">C3</td>
+                                <td class="px-6 py-4">Keingintahuan untuk Berkembang</td>
+                                <td class="px-6 py-4">0.2</td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                <td class="px-6 py-4">C4</td>
+                                <td class="px-6 py-4">Partisipasi dalam Kegiatan</td>
+                                <td class="px-6 py-4">0.15</td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                <td class="px-6 py-4">C5</td>
+                                <td class="px-6 py-4">Keaktifan dan Proaktif</td>
+                                <td class="px-6 py-4">0.1</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -31,19 +61,5 @@
     </div>
 
     @include('alternatif.table')
-
-    @if (session('intervalDiffs'))
-    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-4">
-        <div class="p-6 text-gray-900 dark:text-gray-100">
-            <h3 class="font-semibold text-lg">{{ __('Interval Differences') }}</h3>
-            <ul>
-                <li>C1: {{ session('intervalDiffs')['c1'] }}</li>
-                <li>C2: {{ session('intervalDiffs')['c2'] }}</li>
-                <li>C3: {{ session('intervalDiffs')['c3'] }}</li>
-                <li>C4: {{ session('intervalDiffs')['c4'] }}</li>
-            </ul>
-        </div>
-    </div>
-    @endif
 
 </x-app-layout>

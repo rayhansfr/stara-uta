@@ -57,7 +57,7 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="mb-4">
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c3">Keaktifan dan Proaktif</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200" for="c5">Keaktifan dan Proaktif</label>
                                     <input type="number" name="c5" id="c5" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="1-10">
                                     @error('c5')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -66,7 +66,7 @@
                             </div>
                             <div>
                                 <div class=" text-red-300 mb-6">
-                                    Masukkan Nilai dengan skala 1-10
+                                    Masukkan Nilai dengan skala likert 1-10
                                 </div>
                             </div>
                             <div class="justify-content-end mb-4">
